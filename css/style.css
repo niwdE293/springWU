@@ -1,3 +1,8 @@
+:root {
+    --main-padding: 10%;
+    --box-padding: 5%
+}
+
 body,ul{
     margin: 0;
 }
@@ -51,6 +56,27 @@ body,ul{
     body{
         background-color: white; 
         color:black    
+    }
+    #profile_picture, #about, #section1, #section2, #section3, #footer{
+        padding: var(--main-padding);
+    }
+    #profile_picture, #about, #section1, #box1, #box2, #text1, #text2, #text3, #text4, #footer{
+        background-color: aqua;
+        padding: var(--box-padding)
+    }
+
+    .line{
+        background-color: black;
+        height: 2px;
+    }
+
+    #nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #icon{
+        padding: 5%;
     }
 }
 
