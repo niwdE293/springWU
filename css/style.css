@@ -204,10 +204,6 @@ p, ul{
         justify-content: center;
     }
 
-    .projects_text{
-
-    }
-
     .box h3{
         grid-area: h3;
         padding: var(--box-padding-desktop)
