@@ -1,6 +1,9 @@
 :root {
-    --main-padding: 10%;
-    --box-padding: 5%
+    --main-padding-mobile: 7%;
+    --box-padding-mobile: 5%;
+    --main-padding-desktop: 7%;
+    --box-padding-desktop: 5%;
+    --line-width: 2px;
 }
 
 body,ul{
@@ -11,12 +14,6 @@ img{
     width: 100%;
     display: flex;
     object-fit: cover;
-    object-position: left;
-}
-
-.line{
-    background-color: black;
-    height: 2px;
 }
 
 h1, h2, h3{
@@ -28,10 +25,17 @@ p, ul{
 }
 
 #icon{
-    width: 20%;
-    border-radius: 100%;
+    width: 12vw;
+    height: 12vw;
+    border-radius: 100px;
     border-style: solid;
     border-color: black;
+}
+
+.content_image{
+        border-radius: 10px;
+        border-style: solid;
+        border-color: black;
 }
 
 
@@ -42,11 +46,11 @@ p, ul{
         color:black    
     }
     #about, #section1, #section2, #section3, #footer{
-        padding: var(--main-padding);
+        padding: var(--main-padding-mobile);
     }
     #about, #section1, #box1, #box2, #text1, #text2, #text3, #text4, #footer{
         background-color: aqua;
-        padding: var(--box-padding)
+        padding: var(--box-padding-mobile)
     }
 
     .menu{
@@ -97,12 +101,6 @@ p, ul{
     .menu-button {
         font-size:10px;
     }
-    
-    .content_image{
-        border-radius: 10px;
-        border-style: solid;
-        border-color: black;
-    }
 
     #projects_title{
         display: flex;
@@ -129,14 +127,114 @@ p, ul{
        
     }
 
+    #about, #section1, #section2, #section3, #footer{
+        padding: var(--main-padding-desktop);
+    }
+    #about, #section1, #box1, #box2, #text1, #text2, #text3, #text4, #footer{
+        background-color: aqua;
+        padding: var(--box-padding-desktop)
+    }
+
+    #nav, #upper_portion, #section1, #section2, #section3{
+        border-bottom: var(--line-width) solid black;
+    }
+
+    #nav{
+        display: grid;
+        grid-template-areas: "nv ic";
+        padding: 1%;
+        align-items: center;
+    }
+
     #navs{
+        gap: 10vw;
         display: flex;
         justify-content: space-evenly;
         list-style: none;
+        grid-area: nv;
+    }
+
+    #icon{
+        margin-left: auto;
+        grid-area: ic;
     }
 
     a{
         color:inherit;
         text-decoration: none;
+    }
+
+    #upper_portion{
+        display: grid;
+        grid-template-areas: 
+        "ab prp";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #about{
+        grid-area: ab;
+    }
+
+    #profile_picture{
+        grid-area: prp;
+        border-left: var(--line-width) solid black;
+    }
+
+    #section1{
+        display: grid;
+        grid-template-areas: 
+        "s1img txt";
+        grid-template-columns: 1fr 2fr;
+    }
+
+    #section1_image{
+        grid-area: s1img;
+        object-fit: cover;
+        height: 100%;
+        width:100%;
+    }
+
+    #text{
+        grid-area: txt;
+        padding: var(--box-padding-desktop);
+    }
+
+    #projects_title{
+        display: flex;
+        justify-content: center;
+    }
+
+    .projects_text{
+
+    }
+
+    .box h3{
+        grid-area: h3;
+        padding: var(--box-padding-desktop)
+    }
+
+    .box p{
+        grid-area: p;
+        padding: var(--box-padding-desktop)
+    }
+
+    .box img{
+        grid-area: img;
+    }
+
+    #box1{
+        display: grid;
+        grid-template-areas: 
+        "h3 img"
+        "p img";
+        grid-template-columns: 3fr 2fr;
+    }
+
+    #box2{
+        display: grid;
+        grid-template-areas: 
+        "img h3"
+        "img p";
+        grid-template-columns: 2fr 3fr;
     }
 }
