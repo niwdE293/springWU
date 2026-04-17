@@ -51,27 +51,47 @@ p, ul{
         padding: var(--box-padding-mobile)
     }
 
+    #nav, #profile_picture, #section1, #section2, #section3{
+        border-bottom: var(--line-width) solid black;
+    }
+
     .menu{
         height: 100vh;
-        width: 80vw;
-        background-color: grey;
+        width: 60vw;
+        background-color: white;
         position: fixed;
         top: 0;
         left: -90vw;
         transition: left 0.3s;
         box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
         z-index: 10;
+        border-right: 1px solid black;
+        padding: 2%;
     }
     .menu-button{
         cursor: pointer;
         display: inline;
+        font-size:10px;
     }
+
+    .menu-button-menu{
+        cursor: pointer;
+        display: inline;
+        font-size:10px; 
+    }
+
     .menu-button i.material-icons{
         font-size: 12vw;
     }
+    
+    .menu-button-menu i.material-icons{
+        font-size: 12vw;
+    }
+
     .show{
         left: 0;
     }
+
     .fade-layer{
         position: fixed;
         top: 0;
@@ -92,12 +112,14 @@ p, ul{
     }
 
     #navs {
-    padding-left: 10%;
-    padding-top: 25%;
+        padding-left: 1%;
+        padding-top: 15%;
+        line-height: 2rem;
     }
 
-    .menu-button {
-        font-size:10px;
+    a {
+        text-decoration: none;
+        color: black
     }
 
     #icon{
@@ -127,8 +149,11 @@ p, ul{
     }
 
     .menu-button{
+        display: none;   
+    }
+    
+    .menu-button-menu{
         display: none;
-       
     }
 
     #about, #section1, #section2, #section3, #footer{
@@ -164,8 +189,8 @@ p, ul{
     }
 
     a{
-        color:inherit;
         text-decoration: none;
+        color: black;
     }
 
     #upper_portion{
