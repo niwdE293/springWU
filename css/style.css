@@ -3,7 +3,7 @@
     --box-padding-mobile: 5%;
     --main-padding-desktop: 7%;
     --box-padding-desktop: 5%;
-    --line-width: 2px;
+    --line-height: 2px;
 }
 
 body,ul{
@@ -43,6 +43,20 @@ p, ul{
         background-color: white; 
         color:black    
     }
+
+    hr{
+        height: 1px;
+        border-color: black;
+        color:black;
+        background-color: black;
+        margin: 0px;
+        align-self: center;
+    }
+
+    .name{
+        justify-self: center;
+    }
+
     #about, #section1, #section2, #section3, #footer{
         padding: var(--main-padding-mobile);
     }
@@ -51,9 +65,25 @@ p, ul{
         padding: var(--box-padding-mobile)
     }
 
-    #nav, #profile_picture, #section1, #section2, #section3{
-        border-bottom: var(--line-width) solid black;
+    #profile_picture_hem{
+        border-bottom: var(--line-height) solid black;
     }
+
+    #profile_picture_om_mig{
+        border: var(--line-height) solid black;
+        width: 50%;
+        justify-self: center;
+        border-radius: 15px;
+        margin-top: 10%;
+    }
+
+    #footer{
+        border-top: var(--line-height) solid black;
+    }
+
+    /*#nav, #profile_picture, #section1, #section2, #section3{
+        border-bottom: var(--line-width) solid black;
+    }*/
 
     .menu{
         height: 100vh;
@@ -109,6 +139,7 @@ p, ul{
         display: flex;
         justify-content: space-between;
         padding: 1%;
+        border-bottom: var(--line-height) solid black;
     }
 
     #navs {
@@ -131,6 +162,10 @@ p, ul{
     #projects_title{
         display: flex;
         justify-content: center;
+    }
+
+    .name{
+
     }
 }
 
