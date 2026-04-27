@@ -4,6 +4,8 @@
     --main-padding-desktop: 7%;
     --box-padding-desktop: 5%;
     --line-height: 2px;
+    --main-color: rgb(0, 0, 50);
+    --secondary-color: rgb(200, 210, 230);
 }
 
 body,ul{
@@ -31,42 +33,46 @@ p, ul{
 }
 
 .content_image{
-        border-radius: 10px;
-        border-style: solid;
-        border-color: black;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+}
+
+hr{
+    height: 1px;
+    border-color: var(--secondary-color);
+    color:var(--secondary-color);
+    background-color: var(--secondary-color);
+    margin: 0px;
+    align-self: center;
+}
+
+#footer{
+    border-top: var(--line-height) solid black;
 }
 
 
 /* MOBILE */ 
 @media screen and (max-width: 500px){
     body{
-        background-color: white; 
-        color:black    
-    }
-
-    hr{
-        height: 1px;
-        border-color: black;
-        color:black;
-        background-color: black;
-        margin: 0px;
-        align-self: center;
+        background-color: var(--main-color); 
+        color:var(--secondary-color);    
     }
 
     .name{
         justify-self: center;
     }
 
-    #about, #section1, #section2, #section3, #footer{
+    #about, #section1_om_mig, #section2, #section3, #footer{
         padding: var(--main-padding-mobile);
     }
-    #about, #section1, #box1, #box2, #text1, #text2, #text3, #text4, #footer{
-        background-color: aqua;
+    #about, #section1_om_mig, #box1, #box2, #text1, #text2, #text3, #text4, #footer{
         padding: var(--box-padding-mobile)
     }
 
-    #profile_picture_hem{
-        border-bottom: var(--line-height) solid black;
+    #footer{
+        background-color: var(--secondary-color);
+        color:var(--main-color);
     }
 
     #profile_picture_om_mig{
@@ -77,18 +83,10 @@ p, ul{
         margin-top: 10%;
     }
 
-    #footer{
-        border-top: var(--line-height) solid black;
-    }
-
-    /*#nav, #profile_picture, #section1, #section2, #section3{
-        border-bottom: var(--line-width) solid black;
-    }*/
-
     .menu{
         height: 100vh;
         width: 60vw;
-        background-color: white;
+        background-color: var(--secondary-color);
         position: fixed;
         top: 0;
         left: -90vw;
@@ -98,16 +96,19 @@ p, ul{
         border-right: 1px solid black;
         padding: 2%;
     }
+
     .menu-button{
         cursor: pointer;
         display: inline;
         font-size:10px;
+        color:black;
     }
 
     .menu-button-menu{
         cursor: pointer;
         display: inline;
         font-size:10px; 
+        color:black
     }
 
     .menu-button i.material-icons{
@@ -140,6 +141,7 @@ p, ul{
         justify-content: space-between;
         padding: 1%;
         border-bottom: var(--line-height) solid black;
+        background-color: var(--secondary-color);
     }
 
     #navs {
@@ -164,8 +166,29 @@ p, ul{
         justify-content: center;
     }
 
-    .name{
+    .project{
+        padding: var(--main-padding-mobile);
+    }
 
+    #my_projects_title{
+        justify-self: center;
+    }
+
+    .project_title{
+        justify-self: center;
+    }
+    .project_text{
+        display:flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    #section1{
+        padding: var(--box-padding-mobile);
+    }
+
+    #section1_image{
+        display: none;
     }
 }
 
@@ -174,13 +197,8 @@ p, ul{
 /* DESKTOP */
 @media screen and (min-width:501px){
     body{
-        background-color: white;
-        color:black;
-   
-    }
-
-    .wrapper{
-        
+        color:var(--secondary-color);
+        background-color: var(--main-color);
     }
 
     .menu-button{
@@ -195,7 +213,6 @@ p, ul{
         padding: var(--main-padding-desktop);
     }
     #about, #section1, #box1, #box2, #text1, #text2, #text3, #text4, #footer{
-        background-color: aqua;
         padding: var(--box-padding-desktop)
     }
 
@@ -208,6 +225,8 @@ p, ul{
         grid-template-areas: "nv ic";
         padding: 1%;
         align-items: center;
+        border-bottom: var(--line-height) solid black;
+        background-color: var(--secondary-color);
     }
 
     #navs{
@@ -228,6 +247,11 @@ p, ul{
         color: black;
     }
 
+    #footer{
+        background-color: var(--secondary-color);
+        color:black
+    }
+
     #upper_portion{
         display: grid;
         grid-template-areas: 
@@ -239,9 +263,8 @@ p, ul{
         grid-area: ab;
     }
 
-    #profile_picture{
+    #profile_picture_hem{
         grid-area: prp;
-        border-left: var(--line-width) solid black;
     }
 
     #section1{
@@ -258,7 +281,7 @@ p, ul{
         width:100%;
     }
 
-    #text{
+    .text{
         grid-area: txt;
         padding: var(--box-padding-desktop);
     }
@@ -300,24 +323,62 @@ p, ul{
 
     #section3{
         display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .content_image{
+        margin:auto;
+    }
+
+    #my_projects_title{
+        justify-self: center;
+    }
+
+    #section1_om_mig{
+        padding-left: var(--main-padding-desktop);
+        padding-right: var(--main-padding-desktop);
+    }
+
+    .project{
+        padding: var(--main-padding-desktop);
+    }
+
+    #projects_container{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    #upper_portion_om_mig{
+        display: grid;
         grid-template-areas: 
-        "t1 t2"
-        "t3 t4";
+        "namn ppom";
+        padding: var(--box-padding-desktop);
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    #profile_picture_om_mig{
+        border-radius: 15px;
+        grid-area: ppom;
+        border: var(--line-height) solid black;
     }
 
-    #text1{
-        grid-area: t1;
+    #om_mig_namn{
+        grid-area: namn;
+        align-self: center;
+        padding: var(--box-padding-desktop);
     }
 
-    #text2{
-        grid-area: t2;
+    .project_title{
+        justify-self: center;
+        padding-top: var(--main-padding-desktop);
     }
 
-    #text3{
-        grid-area: t3;
-    }
-
-    #text4{
-        grid-area: t4;
+    .project_text{
+        display:flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-top: var(--box-padding-desktop);
     }
 }
